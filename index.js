@@ -1,7 +1,21 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
-}
+//The function should return true if any pair of numbers in the array adds up to the target number.
 
+  const complements = new Set();
+
+  for (let num of array) {
+      const complement = target - num;
+      if (complements.has(complement)) {
+          return true;
+      }
+      complements.add(num);
+  }
+
+  return false;
+
+
+}
 /* 
   Write the Big O time complexity of your function here
 */
